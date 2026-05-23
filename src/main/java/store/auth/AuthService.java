@@ -13,11 +13,11 @@ import store.account.AccountOut;
 public class AuthService {
 
     // Business logic
-    
+
     // Delegates registration to account
     // Generates tokens by calling JwtService
     
-    @Value("${store.jwt.duration")
+    @Value("${store.jwt.duration}")
     private Long duration;
     
     @Value("${store.jwt.httpOnly}")
