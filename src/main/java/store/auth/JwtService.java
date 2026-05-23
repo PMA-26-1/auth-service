@@ -20,6 +20,10 @@ import store.account.AccountOut;
 
 @Service
 public class JwtService {
+
+    // Wraps the JJWT library
+
+    // Signs and parses JWTs using HMAC secret key
     
     @Value("${store.jwt.secretKey}")
     private String secretKey;
