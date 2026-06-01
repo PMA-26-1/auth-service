@@ -2,6 +2,7 @@ package store.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import store.account.AccountController;
@@ -58,6 +59,7 @@ public class AuthService {
         return jwtService.getId(token);
     }
 
+    @Cacheable(value = "whoami", key = "#idAccount")
     public AccountOut whoAmI(String idAccount) {
         return accountController.findById(idAccount).getBody();
     }
